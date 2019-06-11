@@ -63,6 +63,44 @@ export default class Posts extends Component {
   }
 
   render() {
-    return <></>;
+    return (
+      <>
+        <Grid
+          container
+          direction="row"
+          wrap="nowrap"
+          justify="space-between"
+          alignItems="center"
+          style={{ margin: "1rem", width: "calc(100% - 2rem)" }}
+        >
+          <Grid item>
+            <Typography variant="h3">Posts:</Typography>
+          </Grid>
+          <Grid item>
+            <Fab color="secondary" onClick={this.handleCreate}>
+              <AddIcon />
+            </Fab>
+          </Grid>
+        </Grid>
+        <Grid
+          container
+          spacing={2}
+          alignItems="stretch"
+          className="postsContainer"
+          wrap="wrap"
+          direction="row"
+        >
+          {this.makePost(this.state.posts)}
+        </Grid>
+        {this.state.createModalVis ? (
+          <CreatePostsModal
+            {...this.props}
+            create={this.addPosts}
+            hideModal={this.hideCreateModal}
+            modalVis={this.state.createModalVis}
+          />
+        ) : null}
+      </>
+    );
   }
 }
