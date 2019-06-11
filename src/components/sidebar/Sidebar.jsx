@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import API from "../../modules/dbCalls";
+import API from "../../modules/dbcalls";
 
 export default class Sidebar extends Component {
   state = {

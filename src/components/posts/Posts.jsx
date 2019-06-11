@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Grid, Fab, Typography } from "@material-ui/core";
 import AddIcon from "@material-ui/icons/Add";
 import PostItem from "./PostItem";
-import API from "../../modules/dbCalls";
+import API from "../../modules/dbcalls";
 import CreatePostsModal from "./CreatePostsModal";
 
 export default class Posts extends Component {

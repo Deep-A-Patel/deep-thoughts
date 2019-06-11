@@ -6,70 +6,92 @@ import { Event, LockOpen } from "@material-ui/icons";
 import "./navbar.css";
 
 export default class Navbar extends Component {
-  state = { 
-    isUserLoggedIn: true, 
-    tabValue: false 
+  state = {
+    isUserLoggedIn: true,
+    tabValue: false
   };
 
-  links = [ { 
-    key: 1, 
-    name: "Posts", 
-    icon: Event, 
-    href: "/posts", 
-    linkAction: "" 
-  } ];
+  links = [
+    {
+      key: 1,
+      name: "Posts",
+      icon: Event,
+      href: "/posts",
+      linkAction: ""
+    }
+  ];
 
-  logoutLink = { 
-    key: 2, 
-    name: "Logout", 
-    icon: LockOpen, 
-    href: "/login", 
-    linkAction: "", 
-    onClick: this.handleLogout 
+  logoutLink = {
+    key: 2,
+    name: "Logout",
+    icon: LockOpen,
+    href: "/login",
+    linkAction: "",
+    onClick: this.handleLogout
   };
 
-  handleTabChange = (event, tabValue) => { 
-    this.setState({ tabValue }); 
+  handleTabChange = (event, tabValue) => {
+    this.setState({ tabValue });
   };
 
-  handleLogout = () => { 
-    this.props.logout(); 
+  handleLogout = () => {
+    this.props.logout();
   };
 
-  handleMainPage = () => { 
-    this.setState({ tabValue: false }); 
+  handleMainPage = () => {
+    this.setState({ tabValue: false });
   };
-  
+
   makeIcon = Icon => <Icon />;
   makeLink = link => {
     return (
-      <Tab key={link.key} style={{ minWidth: 80 }} label={link.name} value={link.href} component={Link} to={link.href} icon={this.makeIcon(link.icon)} />
+      <Tab
+        key={link.key}
+        style={{ minWidth: 80 }}
+        label={link.name}
+        value={link.href}
+        component={Link}
+        to={link.href}
+        icon={this.makeIcon(link.icon)}
+      />
     );
   };
 
   render() {
     return (
-      <AppBar color="primary" position="fixed" className="navbar" style={{ zIndex: 1900 }}>
-          <div className="navbar navbar-flexrow">
-              <div>
-                  <Link onClick={this.handleMainPage} to="/">
-                  <Typography variant="h4" component="h2" style={{ color: "#2d4862" }}>
-                      Nutshell
-                  </Typography>
-                  </Link>
-              </div>
-              {this.props.loggedIn ? (
-              <div className="navbar-linkContainer navbar-flexrow">
-                  <Tabs value={this.state.tabValue} onChange={this.handleTabChange}>
-                      {this.links.map(this.makeLink)}
-                  </Tabs>
-
-                  <div className="navbar-logoutContainer" onClick={this.handleLogout}>
-                      {this.makeLink(this.logoutLink)}
-                  </div>
-              </div>
-              ) : null}
+      <AppBar
+        color="primary"
+        position="fixed"
+        className="navbar"
+        style={{ zIndex: 1900 }}
+      >
+        <div className="navbar navbar-flexrow">
+          <div>
+            <Link onClick={this.handleMainPage} to="/">
+              <Typography
+                variant="h4"
+                component="h2"
+                style={{ color: "#2d4862" }}
+              >
+                DeepThoughts
+              </Typography>
+            </Link>
           </div>
+          {this.props.loggedIn ? (
+            <div className="navbar-linkContainer navbar-flexrow">
+              <Tabs value={this.state.tabValue} onChange={this.handleTabChange}>
+                {this.links.map(this.makeLink)}
+              </Tabs>
+
+              <div
+                className="navbar-logoutContainer"
+                onClick={this.handleLogout}
+              >
+                {this.makeLink(this.logoutLink)}
+              </div>
+            </div>
+          ) : null}
+        </div>
       </AppBar>
     );
   }
