@@ -77,12 +77,7 @@ export class EditPostsModal extends Component {
             onChange={this.handleChange}
             fullWidth
           />
-          <TextField
-            id="datetime-local"
-            label="Post Date:"
-            type="datetime-local"
-            InputLabelProps={{ shrink: true }}
-          />
+
           <TextField
             margin="normal"
             id="url"
