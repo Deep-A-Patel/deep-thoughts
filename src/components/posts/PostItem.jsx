@@ -81,7 +81,7 @@ export class PostItem extends Component {
                 handleDelete={this.handleDelete}
               />
             ) : null}
-          </div>
+          </div> 
         </Card>
         {this.state.editModalVis ? (
           <EditPostsModal

@@ -31,7 +31,7 @@ export class CreatePostsModal extends Component {
       name: this.state.name,
       description: this.state.description,
       postDate: dateTime,
-      location: this.state.description,
+      location: this.state.location,
       url: this.state.url
     };
 
