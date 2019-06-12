@@ -53,14 +53,14 @@ export default class Posts extends Component {
     });
   };
 
-  async componentDidMount() {
+  componentDidMount = async () => {
     const newState = {
-      posts: await API.getUserPosts(sessionStorage.getItem("activeUser")).catch(
+      posts: await API.getAllPosts(sessionStorage.getItem("activeUser")).catch(
         _error => []
       )
     };
     this.setState(newState);
-  }
+  };
 
   render() {
     return (
