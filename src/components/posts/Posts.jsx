@@ -31,7 +31,7 @@ export default class Posts extends Component {
 
   confirmDelete = postsId => {
     API.deletePosts(postsId).then(_reply => {
-      API.getUserPosts(sessionStorage.getItem("activeUser")).then(posts => {
+      API.getAllPosts(sessionStorage.getItem("activeUser")).then(posts => {
         this.setState({ posts });
       });
     });
@@ -39,7 +39,7 @@ export default class Posts extends Component {
 
   editPosts = (id, obj) => {
     API.editPost(id, obj).then(_reply => {
-      API.getUserPosts(sessionStorage.getItem("activeUser")).then(posts => {
+      API.getAllPosts(sessionStorage.getItem("activeUser")).then(posts => {
         this.setState({ posts });
       });
     });
@@ -47,7 +47,7 @@ export default class Posts extends Component {
 
   addPosts = obj => {
     API.addPost(obj).then(_reply => {
-      API.getUserPosts(sessionStorage.getItem("activeUser")).then(posts => {
+      API.getAllPosts(sessionStorage.getItem("activeUser")).then(posts => {
         this.setState({ posts });
       });
     });
