@@ -10,7 +10,7 @@ import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 
-const useStyles = makeStyles(theme => ({ }));
+const useStyles = makeStyles(theme => ({}));
 
 export default function SignUp(props) {
   const classes = useStyles();
@@ -19,14 +19,12 @@ export default function SignUp(props) {
   const [username, setUsername] = useState(null);
 
   const handleFieldChange = e => {
-    if (e.target.id === "email") { 
-        setEmail(e.target.value); 
-    } 
-    else if (e.target.id === "password") { 
-        setPassword(e.target.value); 
-    } 
-    else if (e.target.id === "username") { 
-        setUsername(e.target.value); 
+    if (e.target.id === "email") {
+      setEmail(e.target.value);
+    } else if (e.target.id === "password") {
+      setPassword(e.target.value);
+    } else if (e.target.id === "username") {
+      setUsername(e.target.value);
     }
   };
 
@@ -37,37 +35,74 @@ export default function SignUp(props) {
 
   return (
     <Container component="main" maxWidth="xs">
-        <CssBaseline />
-        <div className={classes.paper}>
-            <Avatar className={classes.avatar}>
-                <LockOutlinedIcon />
-            </Avatar>
-            <Typography component="h1" variant="h5">
-                Sign up
-            </Typography>
-            <form className={classes.form} noValidate>
-                <Grid container spacing={2}>
-                    <Grid item xs={12}>
-                        <TextField variant="outlined" required fullWidth id="username" label="Username" name="username" autoComplete="username" onChange={handleFieldChange} />
-                    </Grid>
-                    <Grid item xs={12}>
-                        <TextField variant="outlined" required fullWidth id="email" label="Email Address" name="email" autoComplete="email" onChange={handleFieldChange} />
-                    </Grid>
-                    <Grid item xs={12}>
-                        <TextField variant="outlined" required fullWidth name="password" label="Password" type="password" id="password" autoComplete="current-password" onChange={handleFieldChange} />
-                    </Grid>
-                </Grid>
-                <Button type="submit" fullWidth variant="contained" color="primary" className={classes.submit} onClick={handleSignUp}>
-                    Sign Up
-                </Button>
-                <Grid container justify="flex-end">
-                    <Grid item>
-                        <Link href="/login" variant="body2"> Already have an account? Sign in
-                        </Link>
-                    </Grid>
-                </Grid>
-            </form>
-        </div>
+      <CssBaseline />
+      <div className={classes.paper}>
+        <Avatar className={classes.avatar}>
+          <LockOutlinedIcon />
+        </Avatar>
+        <Typography component="h1" variant="h5">
+          Sign up
+        </Typography>
+        <form className={classes.form} noValidate>
+          <Grid container spacing={2}>
+            <Grid item xs={12}>
+              <TextField
+                variant="outlined"
+                required
+                fullWidth
+                id="username"
+                label="Username"
+                name="username"
+                autoComplete="username"
+                onChange={handleFieldChange}
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                variant="outlined"
+                required
+                fullWidth
+                id="email"
+                label="Email Address"
+                name="email"
+                autoComplete="email"
+                onChange={handleFieldChange}
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                variant="outlined"
+                required
+                fullWidth
+                name="password"
+                label="Password"
+                type="password"
+                id="password"
+                autoComplete="current-password"
+                onChange={handleFieldChange}
+              />
+            </Grid>
+          </Grid>
+          <Button
+            type="submit"
+            fullWidth
+            variant="contained"
+            color="primary"
+            className={classes.submit}
+            onClick={handleSignUp}
+          >
+            Sign Up
+          </Button>
+          <Grid container justify="flex-end">
+            <Grid item>
+              <Link href="/login" variant="body2">
+                {" "}
+                Already have an account? Sign in
+              </Link>
+            </Grid>
+          </Grid>
+        </form>
+      </div>
     </Container>
   );
 }

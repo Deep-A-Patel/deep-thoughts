@@ -65,13 +65,7 @@ export class CreatePostsModal extends Component {
             onChange={this.handleChange}
             fullWidth
           />
-          <TextField
-            id="datetime-local"
-            defaultValue={new Date()}
-            label="Post Date:"
-            type="datetime-local"
-            InputLabelProps={{ shrink: true }}
-          />
+
           <TextField
             margin="normal"
             id="url"

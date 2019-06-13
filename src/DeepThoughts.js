@@ -13,6 +13,11 @@ class Nutshell extends Component {
     this.state = { isUserLoggedIn: !!this.user };
   }
 
+  clearState = () =>
+    this.setState({
+      isUserLoggedIn: !!this.user
+    });
+
   login = (username, password) => {
     API.loginUser(username, password).then(user => {
       if (user.length === 0) {
@@ -46,6 +51,7 @@ class Nutshell extends Component {
 
   logout = () => {
     sessionStorage.removeItem("activeUser");
+    this.clearState();
     this.props.history.push("/login");
   };
 
