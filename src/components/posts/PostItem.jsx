@@ -56,7 +56,7 @@ export class PostItem extends Component {
   render() {
     return (
       <Grid item lg={4} md={6} sm={12}>
-        <Card raised={true}>
+        <Card raised={true} style={this.props.color}>
           <CardMedia
             component="img"
             image={this.props.item.url}

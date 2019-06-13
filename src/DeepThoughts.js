@@ -61,7 +61,7 @@ class Nutshell extends Component {
         <Navbar loggedIn={this.state.isUserLoggedIn} logout={this.logout} />
         {this.state.isUserLoggedIn ? (
           <div
-            className="nutshell-contentContainer"
+            className="deepThoughts-contentContainer"
             style={{ height: "calc(100% - 72px)", marginTop: "72px" }}
           >
             <Sidebar loggedIn={this.state.isUserLoggedIn} />
