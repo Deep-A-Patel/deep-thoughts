@@ -11,7 +11,7 @@ export default class Posts extends Component {
       <PostItem
         color={
           item.userId === parseInt(sessionStorage.getItem("activeUser"))
-            ? { backgroundColor: "lightgray" }
+            ? { backgroundColor: "#befbb8" }
             : null
         }
         key={item.id}
