@@ -9,6 +9,11 @@ export default class Posts extends Component {
   makePost = posts =>
     posts.map(item => (
       <PostItem
+        color={
+          item.userId === parseInt(sessionStorage.getItem("activeUser"))
+            ? { backgroundColor: "lightgray" }
+            : null
+        }
         key={item.id}
         delete={this.confirmDelete}
         edit={this.editPosts}
