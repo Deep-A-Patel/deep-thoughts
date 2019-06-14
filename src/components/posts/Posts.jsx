@@ -7,19 +7,25 @@ import CreatePostsModal from "./CreatePostsModal";
 
 export default class Posts extends Component {
   makePost = posts =>
-    posts.map(item => (
-      <PostItem
-        color={
-          item.userId === parseInt(sessionStorage.getItem("activeUser"))
-            ? { backgroundColor: "#befbb8" }
-            : null
-        }
-        key={item.id}
-        delete={this.confirmDelete}
-        edit={this.editPosts}
-        item={item}
-      />
-    ));
+    posts
+      .sort((postA, postB) => {
+        const dateA = new Date(postA.postDate);
+        const dateB = new Date(postB.postDate);
+        return dateB - dateA;
+      })
+      .map(item => (
+        <PostItem
+          color={
+            item.userId === parseInt(sessionStorage.getItem("activeUser"))
+              ? { backgroundColor: "lightgray" }
+              : null
+          }
+          key={item.id}
+          delete={this.confirmDelete}
+          edit={this.editPosts}
+          item={item}
+        />
+      ));
 
   state = {
     posts: [],
