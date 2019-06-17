@@ -113,6 +113,7 @@ export class CreatePostsModal extends Component {
             onChange={this.handleChange}
             fullWidth
           >
+            <option value={""} />
             <option value={"Other"}>Other</option>
             <option value={"Movie"}>Movie</option>
             <option value={"Music"}>Music</option>
