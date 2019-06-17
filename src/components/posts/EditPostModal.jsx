@@ -12,6 +12,7 @@ export class EditPostsModal extends Component {
   state = {
     name: null,
     description: null,
+    category: null,
     location: null,
     url: null
   };
@@ -20,6 +21,7 @@ export class EditPostsModal extends Component {
     const newState = {
       name: this.props.item.name,
       description: this.props.item.description,
+      category: this.props.item.category,
       url: this.props.item.url,
       location: this.props.item.location
     };
@@ -40,6 +42,7 @@ export class EditPostsModal extends Component {
       userId: parseInt(sessionStorage.getItem("activeUser")),
       name: this.state.name,
       description: this.state.description,
+      category: this.state.category,
       postDate: dateTime,
       location: this.state.location,
       url: this.state.url
@@ -110,6 +113,19 @@ export class EditPostsModal extends Component {
             onChange={this.handleChange}
             fullWidth
           />
+          <select
+            margin="normal"
+            id="category"
+            label="Category"
+            variant="outlined"
+            onChange={this.handleChange}
+            fullWidth
+          >
+            <option value={"Other"}>Other</option>
+            <option value={"Movie"}>Movie</option>
+            <option value={"Music"}>Music</option>
+            <option value={"TV"}>TV</option>
+          </select>
         </DialogContent>
         <DialogActions>
           <Button
