@@ -77,6 +77,9 @@ export class PostItem extends Component {
             >
               {this.props.item.description}
             </Typography>
+            <Typography variant="body3" component="h3">
+              Category: {this.props.item.category}
+            </Typography>
           </CardContent>
           <div className="btnContainer">
             {this.state.isUserItem ? (

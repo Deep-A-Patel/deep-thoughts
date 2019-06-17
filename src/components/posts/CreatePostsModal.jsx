@@ -12,6 +12,7 @@ export class CreatePostsModal extends Component {
   state = {
     name: null,
     description: null,
+    category: null,
     location: null,
     url: null
   };
@@ -26,10 +27,19 @@ export class CreatePostsModal extends Component {
       second: "2-digit"
     });
 
+    if (
+      this.state.category !== "Movie" &&
+      this.state.category !== "TV" &&
+      this.state.category !== "Music"
+    ) {
+      this.state.category = "Other";
+    }
+
     const postsObj = {
       userId: parseInt(sessionStorage.getItem("activeUser")),
       name: this.state.name,
       description: this.state.description,
+      category: this.state.category,
       postDate: dateTime,
       location: this.state.location,
       url: this.state.url
@@ -95,6 +105,19 @@ export class CreatePostsModal extends Component {
             onChange={this.handleChange}
             fullWidth
           />
+          <select
+            margin="normal"
+            id="category"
+            label="Category"
+            variant="outlined"
+            onChange={this.handleChange}
+            fullWidth
+          >
+            <option value={"Other"}>Other</option>
+            <option value={"Movie"}>Movie</option>
+            <option value={"Music"}>Music</option>
+            <option value={"TV"}>TV</option>
+          </select>
         </DialogContent>
         <DialogActions>
           <Button color="secondary" variant="contained" onClick={this.addPosts}>

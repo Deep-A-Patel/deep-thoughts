@@ -6,3 +6,13 @@
   min-width: 10rem;
   background-color: #6fb2ff;
 }
+
+select {
+  padding: 18.5px 14px;
+  font: inherit;
+  color: currentColor;
+  width: 100%;
+  border-color: rgba(0, 0, 0, 0.23);
+  border-radius: 4px;
+  font-size: 18px;
+}
