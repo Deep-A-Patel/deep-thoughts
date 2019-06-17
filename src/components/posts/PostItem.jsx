@@ -70,7 +70,11 @@ export class PostItem extends Component {
             <Typography variant="body1" component="h3">
               Location: {this.props.item.location}
             </Typography>
-            <Typography variant="body2" component="p">
+            <Typography
+              variant="body2"
+              component="p"
+              style={{ whiteSpace: "pre-wrap" }}
+            >
               {this.props.item.description}
             </Typography>
           </CardContent>

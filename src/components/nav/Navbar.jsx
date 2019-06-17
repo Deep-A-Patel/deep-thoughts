@@ -14,7 +14,7 @@ export default class Navbar extends Component {
   links = [
     {
       key: 1,
-      name: "Posts",
+      name: "All Posts",
       icon: Event,
       href: "/posts",
       linkAction: ""
@@ -23,7 +23,7 @@ export default class Navbar extends Component {
 
   logoutLink = {
     key: 2,
-    name: "Logout",
+    name: "Sign out",
     icon: LockOpen,
     href: "/login",
     linkAction: "",
