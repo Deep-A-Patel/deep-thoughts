@@ -14,7 +14,7 @@ export default class Navbar extends Component {
   links = [
     {
       key: 1,
-      name: "All Posts",
+      name: "Posts",
       icon: Event,
       href: "/posts",
       linkAction: ""

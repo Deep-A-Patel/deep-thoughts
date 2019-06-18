@@ -15,6 +15,7 @@ const useStyles = makeStyles(theme => ({}));
 export default function SignUp(props) {
   const classes = useStyles();
   const [email, setEmail] = useState(null);
+  const [avatar, setAvatar] = useState(null);
   const [password, setPassword] = useState(null);
   const [username, setUsername] = useState(null);
 
@@ -25,12 +26,14 @@ export default function SignUp(props) {
       setPassword(e.target.value);
     } else if (e.target.id === "username") {
       setUsername(e.target.value);
+    } else if (e.target.id === "avatar") {
+      setAvatar(e.target.value);
     }
   };
 
   const handleSignUp = e => {
     e.preventDefault();
-    props.register(username, email, password);
+    props.register(username, email, password, avatar);
   };
 
   return (
@@ -81,6 +84,21 @@ export default function SignUp(props) {
                 autoComplete="current-password"
                 onChange={handleFieldChange}
               />
+            </Grid>
+            <Grid item xs={12}>
+              <select
+                margin="normal"
+                id="avatar"
+                label="Avatar"
+                variant="outlined"
+                onChange={handleFieldChange}
+              >
+                <option value={""} />
+                <option value={"☝"}>☝</option>
+                <option value={"☔"}>☔</option>
+                <option value={"☕"}>☕</option>
+                <option value={"⚡"}>⚡</option>
+              </select>
             </Grid>
           </Grid>
           <Button
