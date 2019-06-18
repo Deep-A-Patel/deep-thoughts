@@ -94,10 +94,16 @@ export default function SignUp(props) {
                 onChange={handleFieldChange}
               >
                 <option value={""} />
-                <option value={"☝"}>☝</option>
-                <option value={"☔"}>☔</option>
-                <option value={"☕"}>☕</option>
-                <option value={"⚡"}>⚡</option>
+                <option value={"🤙"}>🤙</option>
+                <option value={"☔️"}>☔️</option>
+                <option value={"🍿"}>🍿</option>
+                <option value={"⚡️"}>⚡️</option>
+                <option value={"👩🏻"}>👩🏻</option>
+                <option value={"👦🏻"}>👦🏻</option>
+                <option value={"🐬"}>🐬</option>
+                <option value={"🐺"}>🐺</option>
+                <option value={"🦄"}>🦄</option>
+                <option value={"🥃"}>🥃</option>
               </select>
             </Grid>
           </Grid>
