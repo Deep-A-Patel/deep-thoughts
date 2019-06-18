@@ -29,6 +29,8 @@ export class CreatePostsModal extends Component {
 
     if (
       this.state.category !== "Movie" &&
+      this.state.category !== "Politics" &&
+      this.state.category !== "Travel" &&
       this.state.category !== "TV" &&
       this.state.category !== "Music"
     ) {
@@ -116,6 +118,8 @@ export class CreatePostsModal extends Component {
             <option value={""} />
             <option value={"Other"}>Other</option>
             <option value={"Movie"}>Movie</option>
+            <option value={"Politics"}>Politics</option>
+            <option value={"Travel"}>Travel</option>
             <option value={"Music"}>Music</option>
             <option value={"TV"}>TV</option>
           </select>

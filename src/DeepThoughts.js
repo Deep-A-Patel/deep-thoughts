@@ -10,8 +10,10 @@ class Nutshell extends Component {
   constructor(props) {
     super(props);
     this.user = sessionStorage.getItem("activeUser");
-    this.state = { isUserLoggedIn: !!this.user };
+    this.state = { isUserLoggedIn: !!this.user, filterParams: null };
   }
+
+  setFilterParams = filterParams => this.setState({ filterParams });
 
   clearState = () =>
     this.setState({
@@ -64,7 +66,10 @@ class Nutshell extends Component {
             className="deepThoughts-contentContainer"
             style={{ height: "calc(100% - 72px)", marginTop: "72px" }}
           >
-            <Sidebar loggedIn={this.state.isUserLoggedIn} />
+            <Sidebar
+              loggedIn={this.state.isUserLoggedIn}
+              setFilterParams={this.setFilterParams}
+            />
             <div
               style={{
                 marginLeft: "200px",
@@ -72,12 +77,16 @@ class Nutshell extends Component {
                 marginTop: "calc(72px + 1rem)"
               }}
             >
-              <ApplicationViews loggedIn={this.state.isUserLoggedIn} />
+              <ApplicationViews
+                filterParams={this.state.filterParams}
+                loggedIn={this.state.isUserLoggedIn}
+              />
             </div>
           </div>
         ) : (
           <div style={{ marginTop: "calc(72px + 1rem)" }}>
             <ApplicationViews
+              filterParams={this.state.filterParams}
               loggedIn={this.state.isUserLoggedIn}
               login={this.login}
               register={this.register}
