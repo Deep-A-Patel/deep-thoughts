@@ -62,6 +62,7 @@ export class PostItem extends Component {
             image={this.props.item.url}
             title="Posts"
           />
+
           <CardHeader
             title={this.props.item.name}
             subheader={"Date Added: " + this.props.item.postDate}
