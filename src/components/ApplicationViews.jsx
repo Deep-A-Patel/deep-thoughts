@@ -48,13 +48,25 @@ class ApplicationViews extends Component {
           loggedIn={this.props.loggedIn}
           exact
           path="/"
-          render={props => <Posts posts={this.state.posts} {...props} />}
+          render={props => (
+            <Posts
+              posts={this.state.posts}
+              filterParams={this.props.filterParams}
+              {...props}
+            />
+          )}
         />
         <ProtectedRoute
           loggedIn={this.props.loggedIn}
           exact
           path="/posts"
-          render={props => <Posts posts={this.state.posts} {...props} />}
+          render={props => (
+            <Posts
+              posts={this.state.posts}
+              filterParams={this.props.filterParams}
+              {...props}
+            />
+          )}
         />
       </div>
     );

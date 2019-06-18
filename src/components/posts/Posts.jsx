@@ -6,26 +6,30 @@ import API from "../../modules/dbcalls";
 import CreatePostsModal from "./CreatePostsModal";
 
 export default class Posts extends Component {
-  makePost = posts =>
-    posts
-      .sort((postA, postB) => {
-        const dateA = new Date(postA.postDate);
-        const dateB = new Date(postB.postDate);
-        return dateB - dateA;
-      })
-      .map(item => (
-        <PostItem
-          color={
-            item.userId === parseInt(sessionStorage.getItem("activeUser"))
-              ? { backgroundColor: "lightgray" }
-              : null
-          }
-          key={item.id}
-          delete={this.confirmDelete}
-          edit={this.editPosts}
-          item={item}
-        />
-      ));
+  makePost = (posts, filterParams) => {
+    const sortedPosts = posts.sort((postA, postB) => {
+      const dateA = new Date(postA.postDate);
+      const dateB = new Date(postB.postDate);
+      return dateB - dateA;
+    });
+    let displayPosts = filterParams
+      ? sortedPosts.filter(post => post.category === filterParams)
+      : sortedPosts;
+
+    return displayPosts.map(item => (
+      <PostItem
+        color={
+          item.userId === parseInt(sessionStorage.getItem("activeUser"))
+            ? { backgroundColor: "lightgray" }
+            : null
+        }
+        key={item.id}
+        delete={this.confirmDelete}
+        edit={this.editPosts}
+        item={item}
+      />
+    ));
+  };
 
   state = {
     posts: [],
@@ -74,6 +78,8 @@ export default class Posts extends Component {
   };
 
   render() {
+    const { filterParams } = this.props;
+
     return (
       <>
         <Grid
@@ -101,7 +107,7 @@ export default class Posts extends Component {
           wrap="wrap"
           direction="row"
         >
-          {this.makePost(this.state.posts)}
+          {this.makePost(this.state.posts, filterParams)}
         </Grid>
         {this.state.createModalVis ? (
           <CreatePostsModal

@@ -1,32 +1,46 @@
 import React, { Component } from "react";
-import API from "../../modules/dbcalls";
+
+import { Button } from "@material-ui/core";
 
 export default class Sidebar extends Component {
-  state = {
-    allUsers: [],
-    isSnackbarVisible: false
-  };
-
-  updateState = () => {
-    API.getAllUsersExcluding(sessionStorage.getItem("activeUser")).then(
-      allUsers => this.setState({ allUsers })
-    );
-  };
-
-  hideSnackbar = () => this.setState({ isSnackbarVisible: false });
-  showSnackbar = () => this.setState({ isSnackbarVisible: true });
-
-  componentDidMount() {
-    this.updateState();
-  }
-
   render() {
+    const { setFilterParams } = this.props;
     return (
       <>
         <div
           className="sidebar"
-          style={{ position: "fixed", height: "100%" }}
-        />
+          style={{
+            position: "fixed",
+            height: "100%",
+            display: "flex",
+            flexDirection: "column"
+          }}
+        >
+          <Button variant="outlined" onClick={() => setFilterParams("Movie")}>
+            Movies
+          </Button>
+          <Button variant="outlined" onClick={() => setFilterParams("TV")}>
+            TV
+          </Button>
+          <Button variant="outlined" onClick={() => setFilterParams("Music")}>
+            Music
+          </Button>
+          <Button
+            variant="outlined"
+            onClick={() => setFilterParams("Politics")}
+          >
+            Politics
+          </Button>
+          <Button variant="outlined" onClick={() => setFilterParams("Travel")}>
+            Travel
+          </Button>
+          <Button variant="outlined" onClick={() => setFilterParams("Other")}>
+            Other
+          </Button>
+          <Button variant="outlined" onClick={() => setFilterParams(null)}>
+            Show All
+          </Button>
+        </div>
       </>
     );
   }
