@@ -33,7 +33,7 @@ const API = {
     ).then(response => response.json());
   },
   getAllPosts: function() {
-    return fetch(`http://localhost:8088/posts`).then(response =>
+    return fetch(`http://localhost:8088/posts?_expand=user`).then(response =>
       response.json()
     );
   },

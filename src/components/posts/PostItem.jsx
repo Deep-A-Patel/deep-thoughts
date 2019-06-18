@@ -88,6 +88,9 @@ export class PostItem extends Component {
                 handleDelete={this.handleDelete}
               />
             ) : null}
+            <Typography variant="body4" component="h2">
+              {this.props.item.user.avatar}
+            </Typography>
           </div>
         </Card>
         {this.state.editModalVis ? (

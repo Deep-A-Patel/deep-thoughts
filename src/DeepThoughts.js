@@ -32,8 +32,13 @@ class Nutshell extends Component {
     });
   };
 
-  register = (username, email, password) => {
-    const newUser = { username: username, email: email, password: password };
+  register = (username, email, password, avatar) => {
+    const newUser = {
+      username: username,
+      email: email,
+      password: password,
+      avatar: avatar
+    };
 
     API.getAllUsers().then(users => {
       if (
