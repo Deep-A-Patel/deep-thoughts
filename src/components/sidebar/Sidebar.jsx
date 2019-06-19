@@ -13,7 +13,8 @@ export default class Sidebar extends Component {
             position: "fixed",
             height: "100%",
             display: "flex",
-            flexDirection: "column"
+            flexDirection: "column",
+            marginTop: "13px"
           }}
         >
           <Button

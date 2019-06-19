@@ -39,6 +39,14 @@ export default function SignUp(props) {
   return (
     <Container component="main" maxWidth="xs">
       <CssBaseline />
+      <img
+        id="Logo"
+        border="0"
+        alt="DeepThoughts"
+        src="deee2.png"
+        width="383"
+        height="167"
+      />
       <div className={classes.paper}>
         <Avatar className={classes.avatar}>
           <LockOutlinedIcon />
@@ -87,6 +95,7 @@ export default function SignUp(props) {
             </Grid>
             <Grid item xs={12}>
               <select
+                className="signUpDropDown"
                 margin="normal"
                 id="avatar"
                 label="Avatar"
