@@ -67,15 +67,15 @@ export default class Navbar extends Component {
       >
         <div className="navbar navbar-flexrow">
           <div>
-            <Link onClick={this.handleMainPage} to="/">
-              <Typography
-                variant="h4"
-                component="h2"
-                style={{ color: "lightgray" }}
-              >
-                DeepThoughts
-              </Typography>
-            </Link>
+            <a href="google.com">
+              <img
+                border="0"
+                alt="DeepThoughts"
+                src="deee.png"
+                width="183"
+                height="80"
+              />
+            </a>
           </div>
           {this.props.loggedIn ? (
             <div className="navbar-linkContainer navbar-flexrow">
