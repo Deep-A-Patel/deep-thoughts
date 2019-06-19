@@ -101,12 +101,12 @@ export default class Posts extends Component {
         </Grid>
         <Grid
           container
-          spacing={2}
+          spacing={4}
           alignItems="stretch"
           className="postsContainer"
           wrap="wrap"
           direction="column"
-          style={{ width: "290%" }}
+          style={{ width: "300%" }}
         >
           {this.makePost(this.state.posts, filterParams)}
         </Grid>

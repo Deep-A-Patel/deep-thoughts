@@ -71,7 +71,7 @@ export default class Navbar extends Component {
               <Typography
                 variant="h4"
                 component="h2"
-                style={{ color: "white" }}
+                style={{ color: "lightgray" }}
               >
                 DeepThoughts
               </Typography>

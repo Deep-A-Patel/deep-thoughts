@@ -16,28 +16,53 @@ export default class Sidebar extends Component {
             flexDirection: "column"
           }}
         >
-          <Button variant="outlined" onClick={() => setFilterParams("Movie")}>
+          <Button
+            variant="outlined"
+            onClick={() => setFilterParams("Movie")}
+            style={{ color: "white" }}
+          >
             Movies
           </Button>
-          <Button variant="outlined" onClick={() => setFilterParams("TV")}>
+          <Button
+            variant="outlined"
+            onClick={() => setFilterParams("TV")}
+            style={{ color: "white" }}
+          >
             TV
           </Button>
-          <Button variant="outlined" onClick={() => setFilterParams("Music")}>
+          <Button
+            variant="outlined"
+            onClick={() => setFilterParams("Music")}
+            style={{ color: "white" }}
+          >
             Music
           </Button>
           <Button
             variant="outlined"
             onClick={() => setFilterParams("Politics")}
+            style={{ color: "white" }}
           >
             Politics
           </Button>
-          <Button variant="outlined" onClick={() => setFilterParams("Travel")}>
+          <Button
+            variant="outlined"
+            onClick={() => setFilterParams("Travel")}
+            style={{ color: "white" }}
+          >
             Travel
           </Button>
-          <Button variant="outlined" onClick={() => setFilterParams("Other")}>
+          <Button
+            variant="outlined"
+            onClick={() => setFilterParams("Other")}
+            style={{ color: "white" }}
+          >
             Other
           </Button>
-          <Button variant="outlined" onClick={() => setFilterParams(null)}>
+          <Button
+            variant="outlined"
+            onClick={() => setFilterParams(null)}
+            style={{ color: "white" }}
+          >
             Show All
           </Button>
         </div>
