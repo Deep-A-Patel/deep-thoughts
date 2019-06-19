@@ -6,7 +6,7 @@ import ApplicationViews from "./components/ApplicationViews";
 import API from "./modules/dbcalls";
 import { CustomTheme } from "./components/CustomTheme";
 
-class Nutshell extends Component {
+class DeepThoughts extends Component {
   constructor(props) {
     super(props);
     this.user = sessionStorage.getItem("activeUser");
@@ -103,4 +103,4 @@ class Nutshell extends Component {
   }
 }
 
-export default withRouter(Nutshell);
+export default withRouter(DeepThoughts);

@@ -2,11 +2,11 @@ import React, { Component } from "react";
 import {
   Card,
   Grid,
-  CardMedia,
   CardHeader,
   CardContent,
   Typography
 } from "@material-ui/core";
+
 import "@material-ui/core/IconButton";
 import EditPostsModal from "./EditPostModal";
 import DeletePostsModal from "./DeletePostModal";
@@ -57,10 +57,13 @@ export class PostItem extends Component {
     return (
       <Grid item lg={4} md={6} sm={12}>
         <Card raised={true} style={this.props.color}>
-          <CardMedia
-            component="img"
-            image={this.props.item.url}
-            title="Posts"
+          <div
+            style={{
+              backgroundImage: `url(${this.props.item.url})`,
+              width: "100%",
+              height: "600px",
+              backgroundSize: "100% 600px"
+            }}
           />
 
           <CardHeader
@@ -71,6 +74,7 @@ export class PostItem extends Component {
             <Typography variant="body1" component="h3">
               Location: {this.props.item.location}
             </Typography>
+
             <Typography
               variant="body2"
               component="p"
