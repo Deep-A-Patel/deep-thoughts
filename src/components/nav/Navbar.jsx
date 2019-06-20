@@ -65,15 +65,15 @@ export default class Navbar extends Component {
         className="navbar"
         style={{ zIndex: 1900 }}
       >
-        <div className="navbar navbar-flexrow">
-          <div>
-            <a href="google.com">
+        <div className="navbar navbar-flexrow" style={{ height: "85px" }}>
+          <div style={{ padding: "13px" }}>
+            <a>
               <img
                 border="0"
                 alt="DeepThoughts"
                 src="deee.png"
-                width="183"
-                height="80"
+                width="auto"
+                height="60"
               />
             </a>
           </div>
