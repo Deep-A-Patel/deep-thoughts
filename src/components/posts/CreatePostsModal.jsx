@@ -108,6 +108,7 @@ export class CreatePostsModal extends Component {
             fullWidth
           />
           <select
+            className="categroyDropDown"
             margin="normal"
             id="category"
             label="Category"

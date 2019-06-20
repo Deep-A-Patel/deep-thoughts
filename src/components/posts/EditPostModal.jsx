@@ -114,6 +114,7 @@ export class EditPostsModal extends Component {
             fullWidth
           />
           <select
+            className="postDropDown"
             margin="normal"
             id="category"
             label="Category"
