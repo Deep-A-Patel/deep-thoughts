@@ -13,7 +13,7 @@ const style = createMuiTheme({
     navText: {
       main: "#d4bff6"
     },
-    secondary: { main: "#05B52D" },
+    secondary: { main: "#016c75" },
     error: { main: "#DB3630" }
   }
 });
