@@ -16,12 +16,20 @@ export class PostItem extends Component {
   state = {
     editModalVis: false,
     deleteModalVis: false,
-    isUserItem: false
+    isUserItem: false,
+    avatars: []
   };
 
   componentDidMount() {
     const user = parseInt(sessionStorage.getItem("activeUser"));
     const itemId = this.props.item.userId;
+
+    fetch(`http://localhost:8088/avatars/${this.props.item.user.avatar}`).then(
+      res =>
+        res.json().then(data => {
+          this.setState({ avatars: data.avatar });
+        })
+    );
 
     if (user === itemId) {
       this.setState({ isUserItem: true });
@@ -65,7 +73,6 @@ export class PostItem extends Component {
               backgroundSize: "100% 600px"
             }}
           />
-
           <CardHeader
             title={this.props.item.name}
             subheader={"Date Added: " + this.props.item.postDate}
@@ -82,9 +89,6 @@ export class PostItem extends Component {
             >
               {this.props.item.description}
             </Typography>
-            <Typography variant="body3" component="h3">
-              Category: {this.props.item.category}
-            </Typography>
           </CardContent>
           <div className="btnContainer">
             {this.state.isUserItem ? (
@@ -94,7 +98,7 @@ export class PostItem extends Component {
               />
             ) : null}
             <Typography variant="body4" component="h2">
-              {this.props.item.user.avatar}
+              {this.state.avatars}
             </Typography>
           </div>
         </Card>

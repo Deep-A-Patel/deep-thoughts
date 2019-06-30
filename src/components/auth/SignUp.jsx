@@ -9,6 +9,7 @@ import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
+import API from "../../modules/dbcalls";
 
 const useStyles = makeStyles(theme => ({}));
 
@@ -18,6 +19,19 @@ export default function SignUp(props) {
   const [avatar, setAvatar] = useState(null);
   const [password, setPassword] = useState(null);
   const [username, setUsername] = useState(null);
+  const [options, setOptions] = useState(null);
+
+  const showAvatars = e => {
+    API.getAllAvatars().then(avatars => {
+      setOptions(
+        avatars.map(avatar => (
+          <option key={avatar.avatar} value={avatar.id}>
+            {avatar.avatar}
+          </option>
+        ))
+      );
+    });
+  };
 
   const handleFieldChange = e => {
     if (e.target.id === "email") {
@@ -100,19 +114,10 @@ export default function SignUp(props) {
                 id="avatar"
                 label="Avatar"
                 variant="outlined"
+                onClick={showAvatars}
                 onChange={handleFieldChange}
               >
-                <option value={""} />
-                <option value={"🤙"}>🤙</option>
-                <option value={"☔️"}>☔️</option>
-                <option value={"🍿"}>🍿</option>
-                <option value={"⚡️"}>⚡️</option>
-                <option value={"👩🏻"}>👩🏻</option>
-                <option value={"👦🏻"}>👦🏻</option>
-                <option value={"🐬"}>🐬</option>
-                <option value={"🐺"}>🐺</option>
-                <option value={"🦄"}>🦄</option>
-                <option value={"🥃"}>🥃</option>
+                {options}
               </select>
             </Grid>
           </Grid>

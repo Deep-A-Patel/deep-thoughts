@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import API from "../../modules/dbcalls";
 import {
   DialogContent,
   DialogActions,
@@ -14,8 +15,17 @@ export class CreatePostsModal extends Component {
     description: null,
     category: null,
     location: null,
-    url: null
+    url: null,
+    categories: []
   };
+
+  componentDidMount() {
+    API.getAllCategories().then(categories => {
+      this.setState({
+        categories: categories
+      });
+    });
+  }
 
   addPosts = () => {
     var dateTime = new Date().toLocaleString("en-US", {
@@ -26,16 +36,6 @@ export class CreatePostsModal extends Component {
       minute: "2-digit",
       second: "2-digit"
     });
-
-    if (
-      this.state.category !== "Movie" &&
-      this.state.category !== "Politics" &&
-      this.state.category !== "Travel" &&
-      this.state.category !== "TV" &&
-      this.state.category !== "Music"
-    ) {
-      this.state.category = "Other";
-    }
 
     const postsObj = {
       userId: parseInt(sessionStorage.getItem("activeUser")),
@@ -58,6 +58,12 @@ export class CreatePostsModal extends Component {
   };
 
   render() {
+    let categories = this.state.categories;
+    let optionItems = categories.map(category => (
+      <option key={category.category} value={category.id}>
+        {category.category}
+      </option>
+    ));
     return (
       <Dialog
         aria-labelledby="simple-modal-title"
@@ -116,13 +122,7 @@ export class CreatePostsModal extends Component {
             onChange={this.handleChange}
             fullWidth
           >
-            <option value={""} />
-            <option value={"Other"}>Other</option>
-            <option value={"Movie"}>Movie</option>
-            <option value={"Politics"}>Politics</option>
-            <option value={"Travel"}>Travel</option>
-            <option value={"Music"}>Music</option>
-            <option value={"TV"}>TV</option>
+            {optionItems}
           </select>
         </DialogContent>
         <DialogActions>

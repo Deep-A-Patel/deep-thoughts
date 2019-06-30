@@ -37,7 +37,16 @@ const API = {
       response.json()
     );
   },
-
+  getAllAvatars: function() {
+    return fetch("http://localhost:8088/avatars").then(response =>
+      response.json()
+    );
+  },
+  getAllCategories: function() {
+    return fetch("http://localhost:8088/categories").then(response =>
+      response.json()
+    );
+  },
   getSingleUserPost: function(postId) {
     return fetch(`http://localhost:8088/posts/${postId}`).then(response =>
       response.json()

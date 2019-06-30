@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import API from "../../modules/dbcalls";
 import {
   DialogContent,
   DialogActions,
@@ -14,10 +15,17 @@ export class EditPostsModal extends Component {
     description: null,
     category: null,
     location: null,
-    url: null
+    url: null,
+    categories: []
   };
 
   componentDidMount() {
+    API.getAllCategories().then(categories => {
+      this.setState({
+        categories: categories
+      });
+    });
+
     const newState = {
       name: this.props.item.name,
       description: this.props.item.description,
@@ -60,6 +68,12 @@ export class EditPostsModal extends Component {
   };
 
   render() {
+    let categories = this.state.categories;
+    let optionItems = categories.map(category => (
+      <option key={category.category} value={category.id}>
+        {category.category}
+      </option>
+    ));
     return (
       <Dialog
         aria-labelledby="simple-modal-title"
@@ -122,13 +136,7 @@ export class EditPostsModal extends Component {
             onChange={this.handleChange}
             fullWidth
           >
-            <option value={""} />
-            <option value={"Other"}>Other</option>
-            <option value={"Movie"}>Movie</option>
-            <option value={"Politics"}>Politics</option>
-            <option value={"Travel"}>Travel</option>
-            <option value={"Music"}>Music</option>
-            <option value={"TV"}>TV</option>
+            {optionItems}
           </select>
         </DialogContent>
         <DialogActions>
