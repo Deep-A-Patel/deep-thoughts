@@ -19,42 +19,42 @@ export default class Sidebar extends Component {
         >
           <Button
             variant="outlined"
-            onClick={() => setFilterParams("Movie")}
+            onClick={() => setFilterParams("3")}
             style={{ color: "white" }}
           >
             Movies
           </Button>
           <Button
             variant="outlined"
-            onClick={() => setFilterParams("TV")}
+            onClick={() => setFilterParams("7")}
             style={{ color: "white" }}
           >
             TV
           </Button>
           <Button
             variant="outlined"
-            onClick={() => setFilterParams("Music")}
+            onClick={() => setFilterParams("6")}
             style={{ color: "white" }}
           >
             Music
           </Button>
           <Button
             variant="outlined"
-            onClick={() => setFilterParams("Politics")}
+            onClick={() => setFilterParams("4")}
             style={{ color: "white" }}
           >
             Politics
           </Button>
           <Button
             variant="outlined"
-            onClick={() => setFilterParams("Travel")}
+            onClick={() => setFilterParams("5")}
             style={{ color: "white" }}
           >
             Travel
           </Button>
           <Button
             variant="outlined"
-            onClick={() => setFilterParams("Other")}
+            onClick={() => setFilterParams("2")}
             style={{ color: "white" }}
           >
             Other
