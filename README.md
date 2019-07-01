@@ -1,68 +1,63 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# NSS Front End Capstone: "Deep Thoughts"
 
-## Available Scripts
+### Overview:
 
-In the project directory, you can run:
+I created a single page application that utilzies the following:
 
-### `npm start`
+1. JavaScript
+2. React.js
+3. JSON for database
+4. Material-UI and CSS for styling
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Technologies Used:
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+1. HTML5, CSS3, JavaScript, React, Git, npm
+2. [React 16.8.6](https://reactjs.org/docs/getting-started.html): Core app functionality
+3. [Material-UI](https://material-ui.com/): Styling library
+4. [JSON Server](https://github.com/typicode/json-server): Fake REST API to run mock back end server
 
-### `npm test`
+### Final Product:
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**"Deep Thoughts" is a bolgging application for the users to share their thoughts throgh the blogs and get the good and easy user experience**
 
-### `npm run build`
+> Allow users to sign in and sign up.
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+> Allow users to select different given avatar/emoji for their user registration.
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+> Allow users to see/read all blogs from other users when they logged in.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+> Allow users to add new blogs when they logged in.
 
-### `npm run eject`
+> Allow users to edit/delete their own blogs.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+> Allow users to see their blogs stand out differently in all blogs.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+> Allow users to filter blogs by category from given categories.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+> Allow users to see the most recent uploaded blogs on top of all blogs.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+> Allow users to sign out.
 
-## Learn More
+### Entity Relationship Diagram of the database:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+![Deep Thoughts ERD](./src/img/dbdiagram.jpg)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+#### Login view
 
-### Code Splitting
+![Deep Thoughts Login view](./src/img/login-page.jpg)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+#### Main app view
 
-### Analyzing the Bundle Size
+![Deep Thoughts Main View](./src/img/main-page.jpg)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+### How to run application:
 
-### Making a Progressive Web App
+1. Ensure you have npm installed on your machine
+2. Ensure you have json-server installed on your machine
+3. Clone the project and run **npm install**
+4. Run the command **json-server api/database.json -p 8088** to run the json-server on http://localhost:8088
+5. In a seperate terminal tab run **npm start** The application will run on http://localhost:3000
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+### Contributor:
 
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+[DEEP PATEL](https://github.com/Deep-A-Patel)
